@@ -6,37 +6,46 @@ const KitchenFurniture = () => {
   const products = [
     {
       id: 1,
-      name: 'Sofa Set',
-      price: '$799',
-      image: 'sofa-image-url', // You would typically use an actual URL here
-      description: 'A comfortable and stylish sofa set for your living room.'
+      name: 'Kitchen pantry',
+      price: '5999',
+      image: 'https://stylesatlife.com/wp-content/uploads/2020/01/15-Latest-Kitchen-Furniture-Designs-With-Pictures.jpg', // You would typically use an actual URL here
+      description: 'New Basic wise Kitchen Pantry with doors.'
     },
     {
       id: 2,
-      name: 'Coffee Table',
-      price: '$199',
-      image: 'coffee-table-image-url',
-      description: 'A modern coffee table to complement your living room decor.'
+      name: 'Modern Kitchen Furnitre',
+      price: '35999',
+      image: 'https://stylesatlife.com/wp-content/uploads/2020/01/15-Latest-Kitchen-Furniture-Designs-With-Pictures.jpg',
+      description: 'Stylish kitchen Furniture with Island Theme.'
     },
     {
       id: 3,
-      name: 'Bookshelf',
-      price: '$299',
-      image: 'bookshelf-image-url',
+      name: 'Storage Cabinet',
+      price: '5000',
+      image: 'https://stylesatlife.com/wp-content/uploads/2020/01/15-Latest-Kitchen-Furniture-Designs-With-Pictures.jpg',
       description: 'A spacious bookshelf to store your books and decor.'
     },
     {
       id: 4,
-      name: 'Accent Chair',
-      price: '$129',
-      image: 'accent-chair-image-url',
-      description: 'An elegant accent chair to add a touch of style to your living room.'
+      name: 'Kitchen Furniture',
+      price: '25999',
+      image: 'https://stylesatlife.com/wp-content/uploads/2020/01/15-Latest-Kitchen-Furniture-Designs-With-Pictures.jpg',
+      description: 'An elegant accent wooden  Kitchen Furniture'
     }
     
   ];
 
   return (
     <>
+     <div>
+          
+          <img className="h-[80vh] w-full object-cover" src="https://www.wakefit.co/guides/wp-content/uploads/2023/01/space-saving-furniture-1.jpg" />
+          <div className="absolute left-10 bottom-10 text-white bg-opacity-60 bg-gray-800 p-5 rounded-md">
+            <h2 className="text-3xl font-semibold">Modern Kitchen Furniture</h2>
+            <p className="mt-2">Comfortable and Modern Designs for Your Kitchen</p>
+          </div>
+          </div>
+          
       {/* <h1 className="text-3xl justify-center items-center  font-bold text-center mb-6">Living Room Furniture</h1> */}
 
       {/* Step 2: Map through the products array and create a grid layout */}

@@ -39,10 +39,10 @@ const BedRoomFurniture = () => {
   return (
     <>
     <div>
-          <img className="h-[80vh] w-full object-cover" src="https://png.pngtree.com/background/20230520/original/pngtree-modern-office-desk-design-ideas-picture-image_2677246.jpg" alt="Furniture 1" />
+          <img className="h-[80vh] w-full object-cover" src="https://starmodernfurniture.com/media/catalog/product/cache/1/thumbnail/9df78eab33525d08d6e5fb8d27136e95/b/e/bedroom-furniture_modern-bedrooms_elena_side_5_1.jpg" alt="Furniture 1" />
           <div className="absolute left-10 bottom-10 text-white bg-opacity-60 bg-gray-800 p-5 rounded-md">
-            <h2 className="text-3xl font-semibold">Stylish Sofas</h2>
-            <p className="mt-2">Comfortable and Modern Designs for Your Living Room</p>
+            <h2 className="text-3xl font-semibold">Comfortable Beds</h2>
+            <p className="mt-2">Comfortable and Modern Designs for Beds</p>
           </div>
           </div>
       {/* <h1 className="text-3xl justify-center items-center  font-bold text-center mb-6">Living Room Furniture</h1> */}

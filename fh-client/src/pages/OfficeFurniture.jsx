@@ -7,31 +7,31 @@ const OfficeFurniture = () => {
   const products = [
     {
       id: 1,
-      name: 'Sofa Set',
-      price: '$799',
-      image: 'https://wakefitdev.gumlet.io/img/CoffeeTablesNew/AbertoACSG/1.jpg?w=3056', // You would typically use an actual URL here
-      description: 'A comfortable and stylish sofa set for your living room.'
+      name: ' Modern Office chair',
+      price: '7799',
+      image: 'https://th.bing.com/th/id/R.d1d97cb3fbe81aeab31b8bfb8588bcfa?rik=mlYJBgR3L00hUw&riu=http%3a%2f%2fcbservices.com%2fwp-content%2fuploads%2f2015%2f02%2fofficefurniture.jpg&ehk=nvX%2fyo0T9jEa7Ze%2bPhgOgPMCgdELVptA%2fS%2biBmc98ZM%3d&risl=&pid=ImgRaw&r=0', // You would typically use an actual URL here
+      description: 'A comfortable and stylish chair for Office.'
     },
     {
       id: 2,
-      name: 'Coffee Table',
-      price: '$199',
-      image: 'https://wakefitdev.gumlet.io/img/CoffeeTablesNew/AbertoACSG/1.jpg?w=3056',
-      description: 'A modern coffee table to complement your living room decor.'
+      name: 'Furniture Set',
+      price: '25000',
+      image: 'https://th.bing.com/th/id/R.d1d97cb3fbe81aeab31b8bfb8588bcfa?rik=mlYJBgR3L00hUw&riu=http%3a%2f%2fcbservices.com%2fwp-content%2fuploads%2f2015%2f02%2fofficefurniture.jpg&ehk=nvX%2fyo0T9jEa7Ze%2bPhgOgPMCgdELVptA%2fS%2biBmc98ZM%3d&risl=&pid=ImgRaw&r=0',
+      description: ' A Modern Executive Office Furniture Set.'
     },
     {
       id: 3,
-      name: 'Bookshelf',
-      price: '$299',
-      image: 'https://wakefitdev.gumlet.io/img/CoffeeTablesNew/AbertoACSG/1.jpg?w=3056',
-      description: 'A spacious bookshelf to store your books and decor.'
+      name: 'Computer Desks',
+      price: '30000',
+      image: 'https://th.bing.com/th/id/R.d1d97cb3fbe81aeab31b8bfb8588bcfa?rik=mlYJBgR3L00hUw&riu=http%3a%2f%2fcbservices.com%2fwp-content%2fuploads%2f2015%2f02%2fofficefurniture.jpg&ehk=nvX%2fyo0T9jEa7Ze%2bPhgOgPMCgdELVptA%2fS%2biBmc98ZM%3d&risl=&pid=ImgRaw&r=0',
+      description: 'White-Blue coloured Simple Computer Desks.'
     },
     {
       id: 4,
-      name: 'Accent Chair',
-      price: '$129',
-      image: 'https://wakefitdev.gumlet.io/img/CoffeeTablesNew/AbertoACSG/1.jpg?w=3056',
-      description: 'An elegant accent chair to add a touch of style to your living room.'
+      name: 'Modular Office Desk',
+      price: '35999',
+      image: 'https://th.bing.com/th/id/R.d1d97cb3fbe81aeab31b8bfb8588bcfa?rik=mlYJBgR3L00hUw&riu=http%3a%2f%2fcbservices.com%2fwp-content%2fuploads%2f2015%2f02%2fofficefurniture.jpg&ehk=nvX%2fyo0T9jEa7Ze%2bPhgOgPMCgdELVptA%2fS%2biBmc98ZM%3d&risl=&pid=ImgRaw&r=0',
+      description: 'Modular  simple Office Desk.'
     }
     
   ];

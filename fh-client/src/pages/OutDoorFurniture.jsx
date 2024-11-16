@@ -39,7 +39,7 @@ const OutDoorFurniture = () => {
   return (
     <>
     <div>
-          <img className="h-[80vh] w-full object-cover" src="https://png.pngtree.com/background/20230520/original/pngtree-modern-office-desk-design-ideas-picture-image_2677246.jpg" alt="Furniture 1" />
+          <img className="h-[80vh] w-full object-cover" src="https://assets.wfcdn.com/im/85808948/compr-r85/1891/189107167/9+-+Person+Outdoor+Seating+Group+with+Cushions.jpg" alt="Furniture 1" />
           <div className="absolute left-10 bottom-10 text-white bg-opacity-60 bg-gray-800 p-5 rounded-md">
             <h2 className="text-3xl font-semibold">Stylish Sofas</h2>
             <p className="mt-2">Comfortable and Modern Designs for Your Living Room</p>
