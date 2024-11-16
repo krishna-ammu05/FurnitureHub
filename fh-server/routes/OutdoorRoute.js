@@ -1,10 +1,10 @@
 const express = require('express')
 const router = express.Router();
-const Products = require('../models/ProductsModel')
+const Outdoors = require('../models/OutdoorsModel')
 
 router.get('/count', async (req, res) => {
     try {
-        const count = await Products.countDocuments()
+        const count = await Outdoors.countDocuments()
         return res.status(200).json({ count: count })
     } catch (error) {
         return res.status(500).json({ message: error.message })
@@ -13,8 +13,8 @@ router.get('/count', async (req, res) => {
 
 router.get('/all', async (req, res) => {
     try {
-        const products = await Products.find()
-        return res.status(200).json(products)
+        const outdoors = await Outdoors.find()
+        return res.status(200).json(outdoors)
     } catch (error) {
         return res.status(500).json({ message: error.message })
     }
@@ -22,13 +22,13 @@ router.get('/all', async (req, res) => {
 
 router.post('/add', async (req, res) => {
     try {
-        const newproduct = new Products(req.body)
-        const { title, img, price,delivery_time,offer } = newproduct
+        const newoutdoor = new Outdoors(req.body)
+        const { title, img, price, delivery_time, offer } = newoutdoor
         if (!title || !img || !price || !delivery_time || !offer) {
             return res.status(400).json({ message: "All fields required" })
         }
-        await newproduct.save()
-        return res.status(200).json(newproduct)
+        await newoutdoor.save()
+        return res.status(200).json(newoutdoor)
     } catch (error) {
         return res.status(500).json({ message: error.message })
     }
@@ -37,12 +37,12 @@ router.post('/add', async (req, res) => {
 router.put('/edit/:id', async (req, res) => {
     try {
         const id = req.params.id
-        const existingproduct = await Products.findOne({ _id: id })
-        if (!existingproduct) {
-            return res.status(404).json({ message: "Product not found" })
+        const existingoutdoor = await Outdoors.findOne({ _id: id })
+        if (!existingoutdoor) {
+            return res.status(404).json({ message: "Outdoor furniture not found" })
         }
-        const updatedproduct = await Products.findByIdAndUpdate(id, req.body, { new: true })
-        return res.status(200).json(updatedproduct)
+        const updatedoutdoor = await Outdoors.findByIdAndUpdate(id, req.body, { new: true })
+        return res.status(200).json(updatedoutdoor)
     } catch (error) {
         return res.status(500).json({ message: error.message })
     }
@@ -51,12 +51,12 @@ router.put('/edit/:id', async (req, res) => {
 router.delete('/delete/:id', async (req, res) => {
     try {
         const id = req.params.id
-        const existingproduct = await Products.findOne({ _id: id })
-        if (!existingproduct) {
-            res.status(404).json({ message: "Product not found" })
+        const existingoutdoor = await Outdoors.findOne({ _id: id })
+        if (!existingoutdoor) {
+            res.status(404).json({ message: "Outdoor Furniture not found" })
         }
-        await Products.findByIdAndDelete(id)
-        return res.status(200).json({ message: "Product Deleted" })
+        await Outdoors.findByIdAndDelete(id)
+        return res.status(200).json({ message: "Outdoor Furniture Deleted" })
     } catch (error) {
         return res.status(500).json({ message: error.message })
     }

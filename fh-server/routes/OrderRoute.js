@@ -1,7 +1,7 @@
 const express = require('express')
 const router = express.Router();
 const Orders = require('../models/OrdersModel')
-const validate = require('../config/auth')
+//const validate = require('../config/auth')
 
 router.get('/count', async (req, res) => {
     try {
