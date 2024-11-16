@@ -1,5 +1,6 @@
 import React from 'react';
 import ProductCard from '../components/ProductCard';
+import MovingBar from '../components/MovingBar';
 
 const LivingRoomFurniture = () => {
   
@@ -39,6 +40,7 @@ const LivingRoomFurniture = () => {
   return (
     <>
     <div>
+      <MovingBar/>
           <img className="h-[80vh] w-full object-cover" src="https://th.bing.com/th/id/R.73f89ef01a4ea17b03f9aca4a5035191?rik=Xy92NQp%2bo68FXA&riu=http%3a%2f%2fwww.antonovich-design.ae%2fuploads%2fgallery%2ffull584b280dca963.jpg&ehk=b4QCXKs%2ftZN8Di9ZMYKjPGpxnuywuQ4qWexfecwIBX4%3d&risl=&pid=ImgRaw&r=0" alt="Furniture 1" />
           <div className="absolute left-10 bottom-10 text-white bg-opacity-60 bg-gray-800 p-5 rounded-md">
             <h2 className="text-3xl font-semibold">Stylish Sofas</h2>

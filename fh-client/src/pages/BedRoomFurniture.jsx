@@ -1,5 +1,6 @@
 import React from 'react';
 import ProductCard from '../components/ProductCard';
+import MovingBar from '../components/MovingBar';
 
 const BedRoomFurniture = () => {
   
@@ -39,6 +40,7 @@ const BedRoomFurniture = () => {
   return (
     <>
     <div>
+        <MovingBar/>
           <img className="h-[80vh] w-full object-cover" src="https://starmodernfurniture.com/media/catalog/product/cache/1/thumbnail/9df78eab33525d08d6e5fb8d27136e95/b/e/bedroom-furniture_modern-bedrooms_elena_side_5_1.jpg" alt="Furniture 1" />
           <div className="absolute left-10 bottom-10 text-white bg-opacity-60 bg-gray-800 p-5 rounded-md">
             <h2 className="text-3xl font-semibold">Comfortable Beds</h2>

@@ -6,8 +6,17 @@ const Navbar = () => {
   const [isDropdownOpen, setDropdownOpen] = useState(false);
 
   const Linksdata = [
-    { title: 'Home', path: '/' },
-    { title: 'All Categories', hasDropdown: true }
+    { 
+      title: 'Home',
+       path: '/' 
+      },
+    { title: 'All Categories', 
+      hasDropdown: true 
+    },
+    {
+      title: 'Contact',
+      path: '/contact'
+  }
   ];
   
 
@@ -38,20 +47,20 @@ const Navbar = () => {
             >
               <NavLink
                 to={link.path || '#'}
-                className="text-lg font-semibold text-gray-700 py-3 px-5 hover:text-gray-900 hover:bg-gray-400 transition duration-200"
+                className="text-lg font-bold text-gray-700 py-3 px-5 hover:text-gray-900 rounded-lg  hover:bg-gray-400 transition duration-200"
               >
                 {link.title}
               </NavLink>
 
               {/* Dropdown Menu */}
               {link.hasDropdown && isDropdownOpen && (
-                <div className="absolute left-0 mt-2 bg-white shadow-xl rounded-md w-48 opacity-0 group-hover:opacity-100 transition-opacity duration-300">
+                <div className="absolute left-0 mt-2 bg-white shadow-xl rounded-md w-48 opacity-0 z-30 group-hover:opacity-100 transition-opacity duration-300">
                   <div className="flex flex-col">
                     {furnitureCategories.map((category, idx) => (
                       <NavLink
                         key={idx}
                         to={category.path}
-                        className="text-gray-700 py-2 px-4 hover:bg-gray-100 font-semibold rounded-md transition duration-150"
+                        className="text-gray-700 py-2 px-4 hover:bg-gray-300 font-semibold rounded-md transition duration-150"
                       >
                         {category.title}
                       </NavLink>
@@ -63,7 +72,7 @@ const Navbar = () => {
           ))}
         </div>
       </div>
-      {/* {showLogin && (
+  {/* {showLogin && (
                 <div className="absolute top-0 left-0 z-50 h-screen w-screen flex justify-center items-center bg-black/40 ">
                     <div className='h-[55%] w-1/3 flex flex-col justify-center items-center bg-white shadow-2xl rounded-md'>
                         <div className='h-full w-full flex flex-col justify-center items-center text-lg font-semibold'>
@@ -85,7 +94,7 @@ const Navbar = () => {
                     </div>
                 </div>
             )
-            } */}
+            }  */}
     </div>
     
   );
