@@ -1,75 +1,69 @@
-import React from 'react';
-import ProductCard from '../components/ProductCard';
-import MovingBar from '../components/MovingBar'
-
+import React, { useEffect, useState } from 'react';
+import ProductCard from '../components/ProductCard'; // Import ProductCard compon
+import MovingBar from '../components/MovingBar';
+  // Import the API function
+import { getKitchenFurniture } from '../Api/api';
 const KitchenFurniture = () => {
-  
-  // Step 1: Define an array of products
-  const products = [
-    {
-      id: 1,
-      name: 'Kitchen pantry',
-      price: '5999',
-      image: 'https://stylesatlife.com/wp-content/uploads/2020/01/15-Latest-Kitchen-Furniture-Designs-With-Pictures.jpg', // You would typically use an actual URL here
-      description: 'New Basic wise Kitchen Pantry with doors.'
-    },
-    {
-      id: 2,
-      name: 'Modern Kitchen Furnitre',
-      price: '35999',
-      image: 'https://stylesatlife.com/wp-content/uploads/2020/01/15-Latest-Kitchen-Furniture-Designs-With-Pictures.jpg',
-      description: 'Stylish kitchen Furniture with Island Theme.'
-    },
-    {
-      id: 3,
-      name: 'Storage Cabinet',
-      price: '5000',
-      image: 'https://stylesatlife.com/wp-content/uploads/2020/01/15-Latest-Kitchen-Furniture-Designs-With-Pictures.jpg',
-      description: 'A spacious bookshelf to store your books and decor.'
-    },
-    {
-      id: 4,
-      name: 'Kitchen Furniture',
-      price: '25999',
-      image: 'https://stylesatlife.com/wp-content/uploads/2020/01/15-Latest-Kitchen-Furniture-Designs-With-Pictures.jpg',
-      description: 'An elegant accent wooden  Kitchen Furniture'
+    const [KitchenFurniture, setKitchenFurniture] = useState(null);
+
+    // Function to fetch data
+    async function fetchData() {
+        try {
+            const res = await getKitchenFurniture();
+            console.log('API Response:', res);  // Log the full response for debugging
+
+            if (res.status === 200) {
+                setKitchenFurniture(res.data);
+            } else {
+                console.error("Failed to fetch data, Status:", res.status);
+            }
+        } catch (error) {
+            console.error("Error fetching data:", error);
+        }
     }
-    
-  ];
 
-  return (
-    <>
-     <div>
-          <MovingBar/>
-          <img className="h-[80vh] w-full object-cover" src="https://www.wakefit.co/guides/wp-content/uploads/2023/01/space-saving-furniture-1.jpg" />
+    // UseEffect to fetch data when the component mounts
+    useEffect(() => {
+        fetchData();
+    }, []);
+
+    // If data is still being loaded or is empty, show a message
+    if (KitchenFurniture === null || KitchenFurniture.length === 0) {
+        return (
+            <>
+                No KitchenFurniture Available
+            </>
+        );
+    }
+
+    // Render Product Cards based on the fetched data
+    return (
+        <>
+         <div>
+           <MovingBar/>
+          <img className="h-[80vh] w-full object-cover" src="https://www.ulcdn.net/media/collection%20and%20listing/Use_the_golden_work_triangle_to_streamline_your_processes.jpg?1695375166" alt="Furniture 1" />
           <div className="absolute left-10 bottom-10 text-white bg-opacity-60 bg-gray-800 p-5 rounded-md">
-            <h2 className="text-3xl font-semibold">Modern Kitchen Furniture</h2>
-            <p className="mt-2">Comfortable and Modern Designs for Your Kitchen</p>
+            <h2 className="text-3xl font-semibold">Comfortable Beds</h2>
+            <p className="mt-2">Comfortable and Modern Designs for Beds</p>
           </div>
           </div>
-          
-      {/* <h1 className="text-3xl justify-center items-center  font-bold text-center mb-6">Living Room Furniture</h1> */}
-
-      {/* Step 2: Map through the products array and create a grid layout */}
-      
-      <div className=" flex flex-col  bg-gray-900">
-      <h1 className="text-3xl justify-center items-center py-4 text-white font-bold text-center mb-6">LivingRoom Furniture</h1>
-      {/* <MovingBar/> */}
-      {/* <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-6"> */}
-      <div className='flex flex-row justify-center items-center gap-5'>
-        {products.map((product) => (
-          <ProductCard
-            key={product.id} // Step 3: Pass product data as props
-            name={product.name}
-            price={product.price}
-            image={product.image}
-            description={product.description}
-          />
-        ))}
-        {/* <MovingBar/> */}
-      </div>
-      </div>
-    </>
-  );
+          <div className=" items-center justify-center min-h-screen bg-gray-900">
+            <h1 className="text-3xl justify-center items-center py-4 text-white font-bold text-center mb-6">Kitchenm Furniture</h1>
+            <div className="w-screen h-full flex justify-start items-start flex-row flex-wrap mt-14 gap-y-20 gap-x-2">
+                {KitchenFurniture.map((furniture, index) => (
+                    <ProductCard 
+                        image={furniture.img} 
+                        name={furniture.name} 
+                        Offer={furniture.Offer} 
+                        price={furniture.price} 
+                        deliveryTime={furniture.deliveryTime} 
+                        key={furniture.id} 
+                    />
+                ))}
+            </div>
+            </div>
+        </>
+    );
 };
+
 export default KitchenFurniture;

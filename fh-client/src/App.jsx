@@ -6,16 +6,26 @@ import AllCategories from './pages/AllCategories'
 import LivingRoomFurniture from './pages/LivingRoomFurniture'
 import BedRoomFurniture from './pages/BedRoomFurniture'
 import OutDoorFurniture from './pages/OutDoorFurniture'
-import KitchenFurniture from './pages/KitchenFurniture'
+
 import OfficeFurniture from './pages/OfficeFurniture'
 // import Products from './pages/Products'
 //Admin
 import AdminLayout from "./layout/AdminLayout"
 import AdminDashboard from "./pages/Admin/AdminDashboard"
-import AdminProducts from "./pages/Admin/AdminProducts"
+// AdminKitchenFurniture from "./pages/Admin/AdminDashboard"
+
+
 import AdminOrders from "./pages/Admin/AdminOrders"
 import AdminUsers from './pages/Admin/AdminUsers'
 import AdminSettings from "./pages/Admin/AdminSettings"
+import AdminLivingRoomFurniture from "./pages/Admin/AdminLivingRoomFurniture"
+import AdminBedRoomFurnitures from "./pages/Admin/AdminBedRoomFurnitures"
+import AdminOutdoorFurnitures from "./pages/Admin/AdminOutdoorFurnitures"
+import AdminOfficeFurnitures from "./pages/Admin/AdminOfficeFurniture"
+import KitchenFurniture from "./pages/KitchenFurniture"
+import AdminKitchenFurniture from "./pages/Admin/AdminKitchenFurniture"
+
+//import AdminKitchenFurnitures from "./pages/Admin/AdminKitchenFurniture"
 const App = () => {
   return (
     <>
@@ -34,10 +44,17 @@ const App = () => {
                 </Route>
                 <Route element={<AdminLayout />}>
                         <Route path='/admin/dashboard' element={<AdminDashboard />} />
-                        <Route path='/admin/products' element={<AdminProducts />} />
+                        {/* <Route path='/admin/products' element={<AdminProducts />} /> */}
+                        
                         <Route path='/admin/orders' element={<AdminOrders />} />
                         <Route path='/admin/users' element={<AdminUsers />} />
                         <Route path='/admin/settings' element={<AdminSettings />} />
+                        <Route path='/admin/LivingRoomFurnitures' element={<AdminLivingRoomFurniture />} />
+                        <Route path='/admin/BedRoomFurnitures' element={<AdminBedRoomFurnitures/>} />
+                        <Route path='/admin/OutdoorFurnitures' element={<AdminOutdoorFurnitures />} />
+                        <Route path='/admin/OfficeFurnitures' element={<AdminOfficeFurnitures/>} />
+                        <Route path= '/admin/KitchenFurnitures' element={<AdminKitchenFurniture/>}/>
+                        
                 </Route>
             
             </Routes>

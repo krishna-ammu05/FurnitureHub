@@ -11,10 +11,6 @@ const AdminLeftBar = () => {
         path: '/admin/dashboard'
     },
     {
-        title: 'Products',
-        path: '/admin/products'
-    },
-    {
         title:'Users',
         path:'/admin/users'
     },
@@ -22,10 +18,31 @@ const AdminLeftBar = () => {
       title:'Orders',
       path:'/admin/orders'
   },
-    {
-      title:'Settings',
-      path:'/admin/settings'
-  }
+  {
+    title:'LivingRoomFurnitures',
+    path:'/admin/LivingRoomFurnitures'
+  },
+  {
+    title:'BedroomFurnitures',
+    path:'/admin/BedRoomFurnitures'
+  },
+  {
+    title:'OutdoorFurnitures',
+    path:'admin/OutDoorFurnitures'
+  },
+  {
+    title:'KitchenFurnitures',
+    path:'/admin/KitchenFurnitures'
+  },
+  {
+    title:'OfficeFurnitures',
+    path:'admin/OfficeFurnitures'
+  },
+  {
+    title:'Settings',
+    path:'/admin/settings'
+}
+
   ]
 
   return (
