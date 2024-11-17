@@ -1,10 +1,10 @@
 const express = require('express')
 const router = express.Router();
-const LivingRooms = require('../models/LivingRoomsModel')
+const LivingRoomFurnitures = require('../models/LivingRoomFurnituresModel')
 
 router.get('/count', async (req, res) => {
     try {
-        const count = await LivingRooms.countDocuments()
+        const count = await LivingRoomFurnitures.countDocuments()
         return res.status(200).json({ count: count })
     } catch (error) {
         return res.status(500).json({ message: error.message })
@@ -13,8 +13,8 @@ router.get('/count', async (req, res) => {
 
 router.get('/all', async (req, res) => {
     try {
-        const livingRooms = await LivingRooms.find()
-        return res.status(200).json(livingRooms)
+        const livingRoomFurnitures = await LivingRoomFurnitures.find()
+        return res.status(200).json(livingRoomFurnitures)
     } catch (error) {
         return res.status(500).json({ message: error.message })
     }
@@ -22,13 +22,13 @@ router.get('/all', async (req, res) => {
 
 router.post('/add', async (req, res) => {
     try {
-        const newlivingRoom = new LivingRooms(req.body)
-        const { title, img, price, delivery_time, offer } = newlivingRoom
+        const newlivingRoomFurniture = new LivingRoomFurnitures(req.body)
+        const { title, img, price, delivery_time, offer } = newlivingRoomFurniture
         if (!title || !img || !price || !delivery_time || !offer) {
             return res.status(400).json({ message: "All fields required" })
         }
-        await newlivingRoom.save()
-        return res.status(200).json(newlivingRoom)
+        await newlivingRoomFurniture.save()
+        return res.status(200).json(newlivingRoomFurniture)
     } catch (error) {
         return res.status(500).json({ message: error.message })
     }
@@ -37,12 +37,12 @@ router.post('/add', async (req, res) => {
 router.put('/edit/:id', async (req, res) => {
     try {
         const id = req.params.id
-        const existinglivingRoom = await LivingRooms.findOne({ _id: id })
-        if (!existinglivingRoom) {
-            return res.status(404).json({ message: "LivingRoom furniture not found" })
+        const existinglivingRoomFurniture = await LivingRoomFurnitures.findOne({ _id: id })
+        if (!existinglivingRoomFurniture) {
+            return res.status(404).json({ message: "LivingRoom Furniture not found" })
         }
-        const updatedlivingRoom = await LivingRooms.findByIdAndUpdate(id, req.body, { new: true })
-        return res.status(200).json(updatedlivingRoom)
+        const updatedlivingRoomFurniture = await LivingRoomFurnitures.findByIdAndUpdate(id, req.body, { new: true })
+        return res.status(200).json(updatedlivingRoomFurniture)
     } catch (error) {
         return res.status(500).json({ message: error.message })
     }
@@ -51,11 +51,11 @@ router.put('/edit/:id', async (req, res) => {
 router.delete('/delete/:id', async (req, res) => {
     try {
         const id = req.params.id
-        const existinglivingRoom = await LivingRooms.findOne({ _id: id })
-        if (!existinglivingRoom) {
+        const existinglivingRoomFurniture = await LivingRoomFurnitures.findOne({ _id: id })
+        if (!existinglivingRoomFurniture) {
             res.status(404).json({ message: "LivingRoom Furniture not found" })
         }
-        await LivingRooms.findByIdAndDelete(id)
+        await LivingRoomFurnitures.findByIdAndDelete(id)
         return res.status(200).json({ message: "LivingRoom Furniture Deleted" })
     } catch (error) {
         return res.status(500).json({ message: error.message })

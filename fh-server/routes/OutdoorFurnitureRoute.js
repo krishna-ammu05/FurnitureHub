@@ -1,10 +1,10 @@
 const express = require('express')
 const router = express.Router();
-const Outdoors = require('../models/OutdoorsModel')
+const OutdoorFurnitures = require('../models/OutdoorFurnituresModel')
 
 router.get('/count', async (req, res) => {
     try {
-        const count = await Outdoors.countDocuments()
+        const count = await OutdooFurniturers.countDocuments()
         return res.status(200).json({ count: count })
     } catch (error) {
         return res.status(500).json({ message: error.message })
@@ -13,8 +13,8 @@ router.get('/count', async (req, res) => {
 
 router.get('/all', async (req, res) => {
     try {
-        const outdoors = await Outdoors.find()
-        return res.status(200).json(outdoors)
+        const outdoorFurnitures = await OutdoorFurnitures.find()
+        return res.status(200).json(outdoorFurnitures)
     } catch (error) {
         return res.status(500).json({ message: error.message })
     }
@@ -22,13 +22,13 @@ router.get('/all', async (req, res) => {
 
 router.post('/add', async (req, res) => {
     try {
-        const newoutdoor = new Outdoors(req.body)
-        const { title, img, price, delivery_time, offer } = newoutdoor
+        const newoutdoorFurniture = new OutdoorFurnitures(req.body)
+        const { title, img, price, delivery_time, offer } = newoutdoorFurniture
         if (!title || !img || !price || !delivery_time || !offer) {
             return res.status(400).json({ message: "All fields required" })
         }
-        await newoutdoor.save()
-        return res.status(200).json(newoutdoor)
+        await newoutdoorFurniture.save()
+        return res.status(200).json(newoutdoorFurniture)
     } catch (error) {
         return res.status(500).json({ message: error.message })
     }
@@ -37,12 +37,12 @@ router.post('/add', async (req, res) => {
 router.put('/edit/:id', async (req, res) => {
     try {
         const id = req.params.id
-        const existingoutdoor = await Outdoors.findOne({ _id: id })
-        if (!existingoutdoor) {
-            return res.status(404).json({ message: "Outdoor furniture not found" })
+        const existingoutdoorFurniture = await OutdoorFurnitures.findOne({ _id: id })
+        if (!existingoutdoorFurniture) {
+            return res.status(404).json({ message: "Outdoor Furniture not found" })
         }
-        const updatedoutdoor = await Outdoors.findByIdAndUpdate(id, req.body, { new: true })
-        return res.status(200).json(updatedoutdoor)
+        const updatedoutdoorFurniture = await OutdoorFurnitures.findByIdAndUpdate(id, req.body, { new: true })
+        return res.status(200).json(updatedoutdoorFurniture)
     } catch (error) {
         return res.status(500).json({ message: error.message })
     }
@@ -51,11 +51,11 @@ router.put('/edit/:id', async (req, res) => {
 router.delete('/delete/:id', async (req, res) => {
     try {
         const id = req.params.id
-        const existingoutdoor = await Outdoors.findOne({ _id: id })
-        if (!existingoutdoor) {
+        const existingoutdoorFurniture = await OutdoorFurnitures.findOne({ _id: id })
+        if (!existingoutdoorFurniture) {
             res.status(404).json({ message: "Outdoor Furniture not found" })
         }
-        await Outdoors.findByIdAndDelete(id)
+        await OutdoorFurnitures.findByIdAndDelete(id)
         return res.status(200).json({ message: "Outdoor Furniture Deleted" })
     } catch (error) {
         return res.status(500).json({ message: error.message })

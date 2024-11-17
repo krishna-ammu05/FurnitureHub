@@ -1,6 +1,6 @@
 const mongoose = require('mongoose')
 
-const OutdoorsSchema = new mongoose.Schema({
+const KitchenFurnituresSchema = new mongoose.Schema({
     title: { // Property/Filed title
         type: String, // Data type of the Property
         required: true // Nullable(false) or NotNullable(true) 
@@ -24,6 +24,6 @@ const OutdoorsSchema = new mongoose.Schema({
     }
 })
 
-const Outdoors = mongoose.model("Outdoors", OutdoorsSchema)
+const KitchenFurnitures = mongoose.model("KitchenFurnitures", KitchenFurnituresSchema)
 
-module.exports = Outdoors
+module.exports = KitchenFurnitures
