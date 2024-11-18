@@ -179,12 +179,12 @@ const AdminOutdoorFurniture = () => {
     <div className="h-[75%] w-1/3 flex flex-col bg-gray-100 shadow-2xl rounded-lg">
       {/* Header */}
       <div className="flex items-center justify-between p-6 bg-gray-200 border-b border-gray-300 rounded-t-lg">
-        <h1 className="text-xl font-bold text-teal-600">Add OutdoorFurnitures</h1>
+        <h1 className="text-xl font-bold text-gray-600">Add OutdoorFurnitures</h1>
         <div 
-          className="text-teal-600 cursor-pointer p-1 rounded-full hover:bg-teal-600 hover:text-white transition"
+          className="text-gray-600 cursor-pointer p-1 rounded-full hover:bg-gray-600 hover:text-white transition"
           onClick={() => setShowAdd(!showAdd)}
         >
-          <X className="h-8 w-8 border-2 border-teal-600 rounded-full" />
+          <X className="h-8 w-8 border-2 border-gray-600 rounded-full" />
         </div>
       </div>
       
@@ -198,7 +198,7 @@ const AdminOutdoorFurniture = () => {
           type="text" 
           id="title" 
           placeholder="Title" 
-          className="w-full p-4 bg-gray-50 rounded-md shadow-md outline-none border-b-2 border-transparent focus:border-teal-500 focus:shadow-lg transition" 
+          className="w-full p-4 bg-gray-50 rounded-md shadow-md outline-none border-b-2 border-transparent focus:border-gray-500 focus:shadow-lg transition" 
           required 
           autoFocus 
         />
@@ -207,7 +207,7 @@ const AdminOutdoorFurniture = () => {
           type="text" 
           id="img" 
           placeholder="Image URL" 
-          className="w-full p-4 bg-gray-50 rounded-md shadow-md outline-none border-b-2 border-transparent focus:border-teal-500 focus:shadow-lg transition" 
+          className="w-full p-4 bg-gray-50 rounded-md shadow-md outline-none border-b-2 border-transparent focus:border-gray-500 focus:shadow-lg transition" 
           required 
         />
         <input 
@@ -215,7 +215,7 @@ const AdminOutdoorFurniture = () => {
           type="number" 
           id="Delivery_time" 
           placeholder="Delivery Time (days)" 
-          className="w-full p-4 bg-gray-50 rounded-md shadow-md outline-none border-b-2 border-transparent focus:border-teal-500 focus:shadow-lg transition" 
+          className="w-full p-4 bg-gray-50 rounded-md shadow-md outline-none border-b-2 border-transparent focus:border-gray-500 focus:shadow-lg transition" 
           required 
         />
         <input 
@@ -223,7 +223,7 @@ const AdminOutdoorFurniture = () => {
           type="number" 
           id="offer" 
           placeholder="Offer (%)" 
-          className="w-full p-4 bg-gray-50 rounded-md shadow-md outline-none border-b-2 border-transparent focus:border-teal-500 focus:shadow-lg transition" 
+          className="w-full p-4 bg-gray-50 rounded-md shadow-md outline-none border-b-2 border-transparent focus:border-gray-500 focus:shadow-lg transition" 
           required 
         />
         <input 
@@ -231,14 +231,14 @@ const AdminOutdoorFurniture = () => {
           type="number" 
           id="price" 
           placeholder="Price (₹)" 
-          className="w-full p-4 bg-gray-50 rounded-md shadow-md outline-none border-b-2 border-transparent focus:border-teal-500 focus:shadow-lg transition" 
+          className="w-full p-4 bg-gray-50 rounded-md shadow-md outline-none border-b-2 border-transparent focus:border-gray-500 focus:shadow-lg transition" 
           required 
         />
         
         {/* Submit Button */}
         <button 
           type="submit" 
-          className="w-full h-12 bg-teal-500 text-white font-bold rounded-md shadow-md hover:bg-teal-600 hover:shadow-lg transition"
+          className="w-full h-12 bg--500 text-white font-bold rounded-md shadow-md hover:bg-gray-600 hover:shadow-lg transition"
         >
           Add
         </button>

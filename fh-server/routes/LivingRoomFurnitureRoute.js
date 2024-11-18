@@ -23,8 +23,8 @@ router.get('/all', async (req, res) => {
 router.post('/add', validateTokenAdmin, async (req, res) => {
     try {
         const newlivingRoomFurniture = new LivingRoomFurnitures(req.body)
-        const { title, img, price, delivery_time, offer } = newlivingRoomFurniture
-        if (!title || !img || !price || !delivery_time || !offer) {
+        const { name, img, price, delivery_time, offer } = newlivingRoomFurniture
+        if (!name || !img || !price || !delivery_time || !offer) {
             return res.status(400).json({ message: "All fields required" })
         }
         await newlivingRoomFurniture.save()

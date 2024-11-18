@@ -1,7 +1,7 @@
 const mongoose = require('mongoose')
 
 const LivingRoomFurnituresSchema = new mongoose.Schema({
-    title: { // Property/Filed title
+    name: { // Property/Filed name
         type: String, // Data type of the Property
         required: true // Nullable(false) or NotNullable(true) 
     },

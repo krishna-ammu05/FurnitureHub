@@ -14,7 +14,7 @@ const AdminLivingRoomFurniture = () => {
   const [showAdd,setShowAdd] = useState(false)
   const [showEdit, setShowEdit] = useState(false)
   
-  const titleRef = useRef('')
+  const nameRef = useRef('')
   const imgRef = useRef('')
   const priceRef = useRef(0)
   const offerRef= useRef()
@@ -37,7 +37,7 @@ const AdminLivingRoomFurniture = () => {
   const handleAdd = async (e) => {
     e.preventDefault()
     const livingRoomFurnitures = {
-      title: titleRef.current.value,
+      name: nameRef.current.value,
       img: imgRef.current.value,
       price: priceRef.current.value,
       offer: offerRef.current.value,
@@ -65,7 +65,7 @@ const AdminLivingRoomFurniture = () => {
   const handleEdit = async (e) => {
     e.preventDefault()
     const livingRoomFurnitures = {
-      title: titleRef.current.value,
+      name: nameRef.current.value,
       img: imgRef.current.value,
       price: priceRef.current.value,
       offer: offerRef.current.value,
@@ -127,7 +127,7 @@ const AdminLivingRoomFurniture = () => {
   return (
     <div className='w-full flex flex-col justify-start items-start'>
       <div className='w-full flex flex-row justify-between items-center my-4 shadow-md rounded-md p-1 border'>
-        <AdminPageHeader title='LivingRoomFurniture' />
+        <AdminPageHeader name='LivingRoomFurniture' />
         <button className='w-10 h-10 font-bold flex justify-center items-center border-2 border-green-500 rounded-md
          text-green-500 shadow-md hover:text-white hover:bg-green-500 hover:shadow-md
           hover:shadow-green-400'
@@ -140,7 +140,7 @@ const AdminLivingRoomFurniture = () => {
           <tr>
             <th className='p-6'>PID</th>
             <th className='p-6'>Image</th>
-            <th className='p-6'>Title</th>
+            <th className='p-6'>name</th>
             <th className='p-6'>Price</th>
             <th className='p-6'>Offer</th>
             <th className='p-6'>Delivery_time</th>
@@ -153,8 +153,8 @@ const AdminLivingRoomFurniture = () => {
             livingRoomFurniture.map((livingRoomFurnitures, index) => (
               <tr key={index}>
                 <td className='p-4'>{livingRoomFurnitures._id} </td>
-                <td className='flex justify-start px-4 items-center'><img src={livingRoomFurnitures.img} alt={livingRoomFurnitures.title} className='h-12 w-12 object-cover rounded-full shadow-md bg-gray-500' /></td>
-                <td className='p-4'>{livingRoomFurnitures.title} </td>
+                <td className='flex justify-start px-4 items-center'><img src={livingRoomFurnitures.img} alt={livingRoomFurnitures.name} className='h-12 w-12 object-cover rounded-full shadow-md bg-gray-500' /></td>
+                <td className='p-4'>{livingRoomFurnitures.name} </td>
                 <td className='p-4'>{livingRoomFurnitures.price}</td>
                 <td className='p-4'>{livingRoomFurnitures.offer}</td>
                 <td className='p-4'>{livingRoomFurnitures.delivery_time}</td>
@@ -186,7 +186,7 @@ const AdminLivingRoomFurniture = () => {
                   </div>
                 </div>
                 <form className='h-[80%] w-[80%] flex flex-col justify-center items-center gap-8' onSubmit={handleAdd}>
-                  <input ref={titleRef} type="text" name="" id="title" placeholder='Title' className='w-full shadow-sm outline-none bg-[#f5f5f7] border-b-2 border-transparent p-4 focus:shadow-lg focus:border-b-2 focus:border-green-400 rounded-sm' required autoFocus />
+                  <input ref={nameRef} type="text" name="" id="name" placeholder='name' className='w-full shadow-sm outline-none bg-[#f5f5f7] border-b-2 border-transparent p-4 focus:shadow-lg focus:border-b-2 focus:border-green-400 rounded-sm' required autoFocus />
                   <input ref={imgRef} type="text" name="" id="img" placeholder='Image URL' className='w-full shadow-sm outline-none bg-[#f5f5f7] border-b-2 border-transparent p-4 focus:shadow-lg focus:border-b-2 focus:border-green-400 rounded-sm' required />
                   <input ref={delivery_timeRef} type="number" name="" id="Delivery_time" placeholder='Delivery_time' className='w-full shadow-sm outline-none bg-[#f5f5f7] border-b-2 border-transparent p-4 focus:shadow-lg focus:border-b-2 focus:border-green-400 rounded-sm' required />
                   <input ref={offerRef} type="number" name="" id="offer" placeholder='Offer' className='w-full shadow-sm outline-none bg-[#f5f5f7] border-b-2 border-transparent p-4 focus:shadow-lg focus:border-b-2 focus:border-green-400 rounded-sm' required />
@@ -211,7 +211,7 @@ const AdminLivingRoomFurniture = () => {
                   </div>
                 </div>
                 <form className='h-[70%] w-[80%] flex flex-col justify-center items-center gap-8' onSubmit={handleEdit}>
-                  <input ref={titleRef} type="text" name="" id="title" placeholder='Title' defaultValue={currentlivingRoomFurnitures.title} className='w-full shadow-sm outline-none bg-[#f5f5f7] border-b-2 border-transparent p-4 focus:shadow-lg focus:border-b-2 focus:border-blue-400 rounded-sm' required autoFocus />
+                  <input ref={nameRef} type="text" name="" id="name" placeholder='name' defaultValue={currentlivingRoomFurnitures.name} className='w-full shadow-sm outline-none bg-[#f5f5f7] border-b-2 border-transparent p-4 focus:shadow-lg focus:border-b-2 focus:border-blue-400 rounded-sm' required autoFocus />
                   <input ref={imgRef} type="text" name="" id="img" placeholder='Image URL' defaultValue={currentlivingRoomFurnitures.img} className='w-full shadow-sm outline-none bg-[#f5f5f7] border-b-2 border-transparent p-4 focus:shadow-lg focus:border-b-2 focus:border-blue-400 rounded-sm' required />
                   <input ref={priceRef} type="number" name="" id="price" placeholder='Price' defaultValue={currentlivingRoomFurnitures.price} className='w-full shadow-sm outline-none bg-[#f5f5f7] border-b-2 border-transparent p-4 focus:shadow-lg focus:border-b-2 focus:border-blue-400 rounded-sm' required />
                   <input ref={offerRef} type="number" name="" id="offer" placeholder='Offer' defaultValue={currentlivingRoomFurnitures.offer} className='w-full shadow-sm outline-none bg-[#f5f5f7] border-b-2 border-transparent p-4 focus:shadow-lg focus:border-b-2 focus:border-green-400 rounded-sm' required />
