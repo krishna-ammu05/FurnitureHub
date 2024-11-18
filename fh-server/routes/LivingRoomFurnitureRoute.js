@@ -1,8 +1,8 @@
 const express = require('express')
 const router = express.Router();
 const LivingRoomFurnitures = require('../models/LivingRoomFurnituresModel')
-
-router.get('/count', async (req, res) => {
+const { validateTokenAdmin } = require('../config/auth')
+router.get('/count', validateTokenAdmin, async (req, res) => {
     try {
         const count = await LivingRoomFurnitures.countDocuments()
         return res.status(200).json({ count: count })
@@ -20,7 +20,7 @@ router.get('/all', async (req, res) => {
     }
 })
 
-router.post('/add', async (req, res) => {
+router.post('/add', validateTokenAdmin, async (req, res) => {
     try {
         const newlivingRoomFurniture = new LivingRoomFurnitures(req.body)
         const { title, img, price, delivery_time, offer } = newlivingRoomFurniture
@@ -34,7 +34,7 @@ router.post('/add', async (req, res) => {
     }
 })
 
-router.put('/edit/:id', async (req, res) => {
+router.put('/edit/:id', validateTokenAdmin, async (req, res) => {
     try {
         const id = req.params.id
         const existinglivingRoomFurniture = await LivingRoomFurnitures.findOne({ _id: id })
@@ -48,7 +48,7 @@ router.put('/edit/:id', async (req, res) => {
     }
 })
 
-router.delete('/delete/:id', async (req, res) => {
+router.delete('/delete/:id', validateTokenAdmin, async (req, res) => {
     try {
         const id = req.params.id
         const existinglivingRoomFurniture = await LivingRoomFurnitures.findOne({ _id: id })

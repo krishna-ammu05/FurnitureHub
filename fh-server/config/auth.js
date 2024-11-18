@@ -1,4 +1,4 @@
- const jwt = require('jsonwebtoken')
+const jwt = require('jsonwebtoken')
 
 const validateToken = (req, res, next) => {
 
@@ -51,4 +51,4 @@ const validateTokenAdmin = (req, res, next) => {
 }
 
 
-module.exports = validateToken;
+module.exports = { validateToken, validateTokenAdmin }
