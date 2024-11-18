@@ -11,13 +11,13 @@
   },
   "dependencies": {
     "axios": "^1.7.7",
+    "jwt-decode": "^4.0.0",
     "lucide-react": "^0.456.0",
     "react": "^18.3.1",
     "react-dom": "^18.3.1",
     "react-responsive-carousel": "^3.2.23",
     "react-router-dom": "^6.28.0",
-    "sonner": "^1.7.0",
-    "fh-client":"file"
+    "sonner": "^1.7.0"
   },
   "devDependencies": {
     "@eslint/js": "^9.13.0",

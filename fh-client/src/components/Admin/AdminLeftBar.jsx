@@ -1,10 +1,11 @@
 import React from 'react'
-import { NavLink } from 'react-router-dom'
+import { NavLink ,useNavigate} from 'react-router-dom'
 import Logo from '../../assets/img/logo.jpg'
 
 
 
 const AdminLeftBar = () => {
+  const Navigate = useNavigate()
   const Linksdata = [
     {
         title: 'Dashboard',
@@ -44,13 +45,19 @@ const AdminLeftBar = () => {
 }
 
   ]
+  const handleLogout = () => {
+    localStorage.removeItem('token')
+    Navigate('/')
+  }
 
   return (
     <div className='w-full h-screen shadow-gray-500 shadow-md flex justify-center items-center'>
       <div className='h-full w-full flex flex-col'>
       <div className="flex items-center space-x-5 px-6 h-[10%]">
           <img src={Logo} alt="logo" className="h-10 w-10 rounded-full " />
-          <span className="text-2xl font-bold text-gray-700">Furniture Hub</span>
+          <span className=" text-2xl font-bold text-gray-700">
+            Furniture Hub
+            </span>
         </div>
         {/* <div className='h-[10%] w-full text-gray-500 flex justify-center font-bold text-2xl items-center'>
           Furniture Hub
@@ -64,7 +71,7 @@ const AdminLeftBar = () => {
         }
         </div>
         <div className='h-[10%] w-full flex items-end'>
-          <div className=' px-8 bg-gray-500 w-full h-2/3 text-white flex justify-start font-bold items-center'>
+          <div className=' px-8 bg-gray-500 w-full h-2/3 text-white flex justify-start font-bold items-center cursor-pointer' onClick={handleLogout}>
             Logout
           </div>
         </div>

@@ -4,6 +4,7 @@ const app = express()
 const port = 3000
 app.use(cors())
 app.use(express.json())
+
 const db = require('./config/db')
 const kitchenFurnitures = require('./routes/KitchenFurnitureRoute')
 const livingRoomFurnitures = require('./routes/LivingRoomFurnitureRoute')

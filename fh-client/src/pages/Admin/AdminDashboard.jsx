@@ -1,6 +1,6 @@
 import React, { useEffect, useState } from 'react'
 import AdminDashboardHomeCards from '../../components/Admin/AdminDashboardHomeCards'
-import { getOrdersCount, getUsersCount } from '../../Api/api'
+import { getOrdersCount,  getUsersCount } from '../../Api/api'
 import { toast } from 'sonner'
 import { Loader2 } from 'lucide-react'
 const AdminDashboard = () => {

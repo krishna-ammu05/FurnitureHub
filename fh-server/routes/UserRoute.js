@@ -12,7 +12,7 @@ router.get('/count', validateTokenAdmin, async (req, res) => {
         return res.status(500).json({ message: error.message })
     }
 })
-router.get('/all', validateTokenAdmin, async (req, res) => {
+router.get('/all',  async (req, res) => {
     try {
         const users = await Users.find()
         res.status(200).json(users)
@@ -122,7 +122,7 @@ router.put('/resetpassword/:id', validateTokenAdmin, async (req, res) => {
     }
 })
 
-router.delete('/delete/:id', validateTokenAdmin, async (req, res) => {
+router.delete('/delete/:id',  async (req, res) => {
     try {
         const id = req.params.id
         const existinguser = await Users.findOne({ _id: id })

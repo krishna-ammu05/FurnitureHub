@@ -12,7 +12,7 @@ router.get('/count', validateTokenAdmin, async (req, res) => {
     }
 })
 
-router.get('/all', validateTokenAdmin, async (req, res) => {
+router.get('/all',  async (req, res) => {
     try {
         const orders = await Orders.find()
         res.status(200).json(orders)

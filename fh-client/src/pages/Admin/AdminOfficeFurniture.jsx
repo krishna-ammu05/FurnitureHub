@@ -193,7 +193,7 @@ const AdminOfficeFurniture = () => {
                 <form className='h-[80%] w-[80%] flex flex-col justify-center items-center gap-8' onSubmit={handleAdd}>
                   <input ref={titleRef} type="text" name="" id="title" placeholder='Title' className='w-full shadow-sm outline-none bg-[#f5f5f7] border-b-2 border-transparent p-4 focus:shadow-lg focus:border-b-2 focus:border-green-400 rounded-sm' required autoFocus />
                   <input ref={imgRef} type="text" name="" id="img" placeholder='Image URL' className='w-full shadow-sm outline-none bg-[#f5f5f7] border-b-2 border-transparent p-4 focus:shadow-lg focus:border-b-2 focus:border-green-400 rounded-sm' required />
-                  <input ref={delivery_timeRef} type="Date" name="" id="Delivery_time" placeholder='Delivery_time' className='w-full shadow-sm outline-none bg-[#f5f5f7] border-b-2 border-transparent p-4 focus:shadow-lg focus:border-b-2 focus:border-green-400 rounded-sm' required />
+                  <input ref={delivery_timeRef} type="number" name="" id="Delivery_time" placeholder='Delivery_time' className='w-full shadow-sm outline-none bg-[#f5f5f7] border-b-2 border-transparent p-4 focus:shadow-lg focus:border-b-2 focus:border-green-400 rounded-sm' required />
                   <input ref={offerRef} type="number" name="" id="offer" placeholder='Offer' className='w-full shadow-sm outline-none bg-[#f5f5f7] border-b-2 border-transparent p-4 focus:shadow-lg focus:border-b-2 focus:border-green-400 rounded-sm' required />
                   <input ref={priceRef} type="number" name="" id="price" placeholder='Price' className='w-full shadow-sm outline-none bg-[#f5f5f7] border-b-2 border-transparent p-4 focus:shadow-lg focus:border-b-2 focus:border-green-400 rounded-sm' required />
                   <button type="submit" className="w-full h-[3rem]  shadow-lg shadow-gray-400 hover:shadow-green-400 bg-green-500 text-white rounded-sm outline-none">Add</button>
@@ -220,15 +220,14 @@ const AdminOfficeFurniture = () => {
                   <input ref={imgRef} type="text" name="" id="img" placeholder='Image URL' defaultValue={currentOfficeFurnitures.img} className='w-full shadow-sm outline-none bg-[#f5f5f7] border-b-2 border-transparent p-4 focus:shadow-lg focus:border-b-2 focus:border-blue-400 rounded-sm' required />
                   <input ref={priceRef} type="number" name="" id="price" placeholder='Price' defaultValue={currentOfficeFurnitures.price} className='w-full shadow-sm outline-none bg-[#f5f5f7] border-b-2 border-transparent p-4 focus:shadow-lg focus:border-b-2 focus:border-blue-400 rounded-sm' required />
                   <input ref={offerRef} type="number" name="" id="offer" placeholder='Offer' defaultValue={currentOfficeFurnitures.offer} className='w-full shadow-sm outline-none bg-[#f5f5f7] border-b-2 border-transparent p-4 focus:shadow-lg focus:border-b-2 focus:border-green-400 rounded-sm' required />
-                  <input ref={delivery_timeRef} type="Date" name="" id="Delivery_time" placeholder='Delivery_time' defaultValue={currentOfficeFurnitures.delivery_time} className='w-full shadow-sm outline-none bg-[#f5f5f7] border-b-2 border-transparent p-4 focus:shadow-lg focus:border-b-2 focus:border-green-400 rounded-sm' required />                   <input ref={offerRef} type="number" name="" id="offer" placeholder='Offer'  defaultValue={currentOfficeFurnitures.offer} className='w-full shadow-sm outline-none bg-[#f5f5f7] border-b-2 border-transparent p-4 focus:shadow-lg focus:border-b-2 focus:border-green-400 rounded-sm' required /><button type="submit" className="w-full h-[3rem]  shadow-lg shadow-gray-400 hover:shadow-blue-400 bg-blue-500 text-white rounded-sm outline-none">Save</button>
+                  <input ref={delivery_timeRef} type="number" name="" id="Delivery_time" placeholder='Delivery_time' defaultValue={currentOfficeFurnitures.delivery_time} className='w-full shadow-sm outline-none bg-[#f5f5f7] border-b-2 border-transparent p-4 focus:shadow-lg focus:border-b-2 focus:border-green-400 rounded-sm' required />                   <input ref={offerRef} type="number" name="" id="offer" placeholder='Offer'  defaultValue={currentOfficeFurnitures.offer} className='w-full shadow-sm outline-none bg-[#f5f5f7] border-b-2 border-transparent p-4 focus:shadow-lg focus:border-b-2 focus:border-green-400 rounded-sm' required /><button type="submit" className="w-full h-[3rem]  shadow-lg shadow-gray-400 hover:shadow-blue-400 bg-blue-500 text-white rounded-sm outline-none">Save</button>
                 </form>
               </div>
             </div>
           </div>
         </>
       )
-
-      }
+    }
     </div>
   )
 }
