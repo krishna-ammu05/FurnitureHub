@@ -56,7 +56,7 @@ const KitchenFurniture = () => {
                         name={furniture.title} 
                         offer={furniture.offer} 
                         price={furniture.price} 
-                        delivery_time={furniture.deliver_time} 
+                        delivery_time={furniture.delivery_time} 
                         key={furniture.id} 
                     />
                 ))}

@@ -1,33 +1,35 @@
-import React from "react";
+
 import { IndianRupee, X } from 'lucide-react'
-// //import React, { useRef, useState } from 'react'
-// import { addOrder } from '../Api/api'
-// import { toast } from 'sonner'
+
+import React, { useRef, useState } from 'react'
+import { addOrder } from '../Api/api'
+import { toast } from 'sonner'
 
 const ProductCard = ({ name, image, price, offer, delivery_time }) => {
-  // const [showPurchase, setShowPurchase] = useState(false)
-  //   const phoneRef = useRef(0)
-  //   const addressRef = useRef('')
-  //   const handleBuy = async (e) => {
-  //       e.preventDefault()
-  //       const order = {
-  //           uid: uid,
-  //           pid: pid,
-  //           total: price,
-  //           phone: phoneRef.current.value,
-  //           address: addressRef.current.value
-  //       }
-  //       try {
-  //           const response = await addOrder(order)
-  //           if (response.status === 200) {
-  //               toast.success("Order Placed")
-  //               setShowPurchase(false)
-  //           }
-  //       } catch (error) {
-  //           toast.error("Error while placing order")
-  //           console.log(error)
-  //       }
-  //   }
+ 
+  const [showPurchase, setShowPurchase] = useState(false)
+    const phoneRef = useRef(0)
+    const addressRef = useRef('')
+    const handleBuy = async (e) => {
+        e.preventDefault()
+        const order = {
+            uid: uid,
+            pid: pid,
+            total: price,
+            phone: phoneRef.current.value,
+            address: addressRef.current.value
+        }
+        try {
+            const response = await addOrder(order)
+            if (response.status === 200) {
+                toast.success("Order Placed")
+                setShowPurchase(false)
+            }
+        } catch (error) {
+            toast.error("Error while placing order")
+            console.log(error)
+        }
+    }
 
   return (
     <div className="bg-gray-700 text-white rounded-lg shadow-lg w-[19%] h-100 p-5 relative">

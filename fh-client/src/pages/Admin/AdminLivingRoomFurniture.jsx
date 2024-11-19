@@ -6,6 +6,7 @@ import { toast } from 'sonner'
 
 const AdminLivingRoomFurniture = () => {
   //null -> livingRoomFurniture[] | Store the data
+  
   const [currentlivingRoomFurnitures, setCurrentlivingRoomFurnitures] = useState(null)
   const [livingRoomFurniture, setlivingRoomFurniture] = useState(null)
   //true (shows loading screen) -> false(hide loading screen) | Condition Render
@@ -14,7 +15,7 @@ const AdminLivingRoomFurniture = () => {
   const [showAdd,setShowAdd] = useState(false)
   const [showEdit, setShowEdit] = useState(false)
   
-  const nameRef = useRef('')
+  const titleRef = useRef('')
   const imgRef = useRef('')
   const priceRef = useRef(0)
   const offerRef= useRef()
@@ -37,7 +38,7 @@ const AdminLivingRoomFurniture = () => {
   const handleAdd = async (e) => {
     e.preventDefault()
     const livingRoomFurnitures = {
-      name: nameRef.current.value,
+      title: titleRef.current.value,
       img: imgRef.current.value,
       price: priceRef.current.value,
       offer: offerRef.current.value,
@@ -65,7 +66,7 @@ const AdminLivingRoomFurniture = () => {
   const handleEdit = async (e) => {
     e.preventDefault()
     const livingRoomFurnitures = {
-      name: nameRef.current.value,
+      title: titleRef.current.value,
       img: imgRef.current.value,
       price: priceRef.current.value,
       offer: offerRef.current.value,
@@ -154,7 +155,7 @@ const AdminLivingRoomFurniture = () => {
               <tr key={index}>
                 <td className='p-4'>{livingRoomFurnitures._id} </td>
                 <td className='flex justify-start px-4 items-center'><img src={livingRoomFurnitures.img} alt={livingRoomFurnitures.name} className='h-12 w-12 object-cover rounded-full shadow-md bg-gray-500' /></td>
-                <td className='p-4'>{livingRoomFurnitures.name} </td>
+                <td className='p-4'>{livingRoomFurnitures.title} </td>
                 <td className='p-4'>{livingRoomFurnitures.price}</td>
                 <td className='p-4'>{livingRoomFurnitures.offer}</td>
                 <td className='p-4'>{livingRoomFurnitures.delivery_time}</td>
@@ -186,7 +187,7 @@ const AdminLivingRoomFurniture = () => {
                   </div>
                 </div>
                 <form className='h-[80%] w-[80%] flex flex-col justify-center items-center gap-8' onSubmit={handleAdd}>
-                  <input ref={nameRef} type="text" name="" id="name" placeholder='name' className='w-full shadow-sm outline-none bg-[#f5f5f7] border-b-2 border-transparent p-4 focus:shadow-lg focus:border-b-2 focus:border-green-400 rounded-sm' required autoFocus />
+                  <input ref={titleRef} type="text" name="" id="name" placeholder='name' className='w-full shadow-sm outline-none bg-[#f5f5f7] border-b-2 border-transparent p-4 focus:shadow-lg focus:border-b-2 focus:border-green-400 rounded-sm' required autoFocus />
                   <input ref={imgRef} type="text" name="" id="img" placeholder='Image URL' className='w-full shadow-sm outline-none bg-[#f5f5f7] border-b-2 border-transparent p-4 focus:shadow-lg focus:border-b-2 focus:border-green-400 rounded-sm' required />
                   <input ref={delivery_timeRef} type="number" name="" id="Delivery_time" placeholder='Delivery_time' className='w-full shadow-sm outline-none bg-[#f5f5f7] border-b-2 border-transparent p-4 focus:shadow-lg focus:border-b-2 focus:border-green-400 rounded-sm' required />
                   <input ref={offerRef} type="number" name="" id="offer" placeholder='Offer' className='w-full shadow-sm outline-none bg-[#f5f5f7] border-b-2 border-transparent p-4 focus:shadow-lg focus:border-b-2 focus:border-green-400 rounded-sm' required />
@@ -211,7 +212,7 @@ const AdminLivingRoomFurniture = () => {
                   </div>
                 </div>
                 <form className='h-[70%] w-[80%] flex flex-col justify-center items-center gap-8' onSubmit={handleEdit}>
-                  <input ref={nameRef} type="text" name="" id="name" placeholder='name' defaultValue={currentlivingRoomFurnitures.name} className='w-full shadow-sm outline-none bg-[#f5f5f7] border-b-2 border-transparent p-4 focus:shadow-lg focus:border-b-2 focus:border-blue-400 rounded-sm' required autoFocus />
+                  <input ref={titleRef} type="text" name="" id="name" placeholder='name' defaultValue={currentlivingRoomFurnitures.name} className='w-full shadow-sm outline-none bg-[#f5f5f7] border-b-2 border-transparent p-4 focus:shadow-lg focus:border-b-2 focus:border-blue-400 rounded-sm' required autoFocus />
                   <input ref={imgRef} type="text" name="" id="img" placeholder='Image URL' defaultValue={currentlivingRoomFurnitures.img} className='w-full shadow-sm outline-none bg-[#f5f5f7] border-b-2 border-transparent p-4 focus:shadow-lg focus:border-b-2 focus:border-blue-400 rounded-sm' required />
                   <input ref={priceRef} type="number" name="" id="price" placeholder='Price' defaultValue={currentlivingRoomFurnitures.price} className='w-full shadow-sm outline-none bg-[#f5f5f7] border-b-2 border-transparent p-4 focus:shadow-lg focus:border-b-2 focus:border-blue-400 rounded-sm' required />
                   <input ref={offerRef} type="number" name="" id="offer" placeholder='Offer' defaultValue={currentlivingRoomFurnitures.offer} className='w-full shadow-sm outline-none bg-[#f5f5f7] border-b-2 border-transparent p-4 focus:shadow-lg focus:border-b-2 focus:border-green-400 rounded-sm' required />
