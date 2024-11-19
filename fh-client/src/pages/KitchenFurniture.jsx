@@ -43,20 +43,20 @@ const KitchenFurniture = () => {
            <MovingBar/>
           <img className="h-[80vh] w-full object-cover" src="https://www.ulcdn.net/media/collection%20and%20listing/Use_the_golden_work_triangle_to_streamline_your_processes.jpg?1695375166" alt="Furniture 1" />
           <div className="absolute left-10 bottom-10 text-white bg-opacity-60 bg-gray-800 p-5 rounded-md">
-            <h2 className="text-3xl font-semibold">Comfortable Beds</h2>
-            <p className="mt-2">Comfortable and Modern Designs for Beds</p>
+            <h2 className="text-3xl font-semibold">Modern kitchens</h2>
+            <p className="mt-2">Modern and elegant kitchens</p>
           </div>
           </div>
           <div className=" items-center justify-center min-h-screen bg-gray-900">
-            <h1 className="text-3xl justify-center items-center py-4 text-white font-bold text-center mb-6">Kitchenm Furniture</h1>
-            <div className="w-screen h-full flex justify-start items-start flex-row flex-wrap mt-14 gap-y-20 gap-x-2">
+            <h1 className="text-3xl justify-center items-center py-4 text-white font-bold text-center mb-6">Kitchen Furnitures</h1>
+            <div className="w-screen h-full flex justify-center items-start flex-row flex-wrap mt-14 gap-y-20 gap-x-2">
                 {KitchenFurniture.map((furniture, index) => (
                     <ProductCard 
                         image={furniture.img} 
-                        name={furniture.name} 
-                        Offer={furniture.Offer} 
+                        name={furniture.title} 
+                        offer={furniture.offer} 
                         price={furniture.price} 
-                        deliveryTime={furniture.deliveryTime} 
+                        delivery_time={furniture.deliver_time} 
                         key={furniture.id} 
                     />
                 ))}

@@ -48,15 +48,15 @@ const OfficeFurniture = () => {
           </div>
           </div>
           <div className=" items-center justify-center min-h-screen bg-gray-900">
-            <h1 className="text-3xl justify-center items-center py-4 text-white font-bold text-center mb-6">OfficeRoom Furniture</h1>
+            <h1 className="text-3xl justify-center items-center py-4 text-white font-bold text-center mb-6">OfficeRoom Furnitures</h1>
             <div className="w-screen h-full flex justify-start items-start flex-row flex-wrap mt-14 gap-y-20 gap-x-2">
                 {OfficeFurniture.map((furniture, index) => (
                     <ProductCard 
                         image={furniture.img} 
-                        name={furniture.name} 
-                        Offer={furniture.Offer} 
+                        name={furniture.title} 
+                        offer={furniture.offer} 
                         price={furniture.price} 
-                        deliveryTime={furniture.deliveryTime} 
+                        delivery_time={furniture.delivery_time} 
                         key={furniture.id} 
                     />
                 ))}

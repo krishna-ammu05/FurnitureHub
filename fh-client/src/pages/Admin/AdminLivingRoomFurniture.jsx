@@ -139,8 +139,8 @@ const AdminLivingRoomFurniture = () => {
         <thead className='shadow-md font-bold text-gray-500 text-left rounded-md'>
           <tr>
             <th className='p-6'>PID</th>
-            <th className='p-6'>Image</th>
             <th className='p-6'>name</th>
+            <th className='p-6'>Image</th>
             <th className='p-6'>Price</th>
             <th className='p-6'>Offer</th>
             <th className='p-6'>Delivery_time</th>
